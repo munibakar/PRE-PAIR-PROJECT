@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Verification
+{% endblock %}
+
+{% block content %}
+  <style>
+    body {
+    background-image: url("https://i.hizliresim.com/2dxehbp.png");
+    background-size: cover;
+    background-position: center;
+    color: #d4d4d4;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+  }
+
+  .container {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color for contrast */
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(42, 42, 42, 0.8); /* Glass effect background color with transparency */
+    border-radius: 5px;
+    margin-top: 50px;
+
+  }
+
+  h2 {
+    text-align: center;
+    color: #FFD707;
+    margin-top: -70px;
+  }
+
+  label {
+    color: #FFD707;
+  }
+
+  .form-control {
+    background-color: #333;
+    color: #d4d4d4;
+    border: 1px solid #FFD707;
+    width: 100%; /* Set the width to 100% for wider input fields */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    background-color: #FFD707;
+    border: 1px solid #FFD707;
+    width: 100%; /* Set the width to 100% for wider button */
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    color: #000;
+  }
+
+  .btn-primary:hover {
+    background-color: #D4B200;
+    color: #000;
+  }
+  </style>
+
+ <div class="container mt-5">
+    <h2>Verification</h2>
+    <br>
+    <p class="text-center">Please enter the verification code sent to your email.</p>
+
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="verificationCode">Verification Code:</label>
+        <input type="text" 
+          class="form-control" 
+          id="verificationCode" 
+          name="verificationCode" required>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <button type="submit" class="btn btn-primary">Verify</button>
+        </div>
+    </form>
+  </div>
+
+{% endblock %}

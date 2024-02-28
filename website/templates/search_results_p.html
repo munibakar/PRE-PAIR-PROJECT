@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ user_data.username }}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+  body {
+    background-image: url("https://i.hizliresim.com/6gc8bli.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(42, 42, 42, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 50px; /* Sayfanın üstünden biraz aşağıda başlasın */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color for contrast */
+  }
+
+  button {
+    background-color: #585EFF;
+  }
+
+  h1 {
+    color: #21EF80;
+    text-align: center;
+  }
+
+  .user-info {
+    margin-top: 20px;
+  }
+
+  p {
+    margin: 8px 0;
+  }
+
+  h2 {
+    color: #585EFF; /* Change the color of the "Send Message" heading */
+  }
+
+  /* Eklenen stil */
+  .message-form {
+    margin-top: 20px;
+  }
+
+  .message-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn-send {
+    background-color: #585EFF;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color for contrast */
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="profile-container">
+  <h1> {{ user_data.username }}'s Profile</h1>
+
+  {% if user_data %}
+    <div class="user-info">
+      <p><strong>Username:</strong> {{ user_data.username }}</p>
+      <p><strong>Gender:</strong> {{ user_data.gender if 'gender' in user_data else 'other'}}</p>
+      <p><strong>Games {{ user_data.username }} Plays:</strong></p>
+      <ul>
+          {% for game in user_data.games %}
+              <li>{{ game.name }}: {{ game.hours }} hours</li>
+          {% endfor %}
+      </ul>
+    </p>
+      <!-- İhtiyaca göre ekstra alanlar ekleyin -->
+    </div>
+
+    <div class="message-form">
+      <h2>Send Message</h2>
+      <form id="myForm" method = "POST">
+          <textarea class="message-input" name="message" id="message" placeholder="Type your message here..." required></textarea>
+          <button type="submit" class="btn-send">Send</button>
+      </form>
+  </div>
+  
+  <script>
+      function clearTextarea() {
+          document.getElementById("message").value = "";
+      }
+  </script>
+
+  {% else %}
+    <p>Kullanıcı bulunamadı.</p>
+  {% endif %}
+</div>
+
+{% endblock content %}

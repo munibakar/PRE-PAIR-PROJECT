@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  <style>
+    body {
+      background-image: url("https://i.hizliresim.com/6gc8bli.png");
+      background-size: cover;
+      background-position: center;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'VT323', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    button {
+      background-color: #FFD707;
+    }
+    
+
+    h1 {
+      text-align: center;
+      color: #FFD707;
+      font-size: 50px;
+      margin-top: 50px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 35px;
+    }
+
+    ul {
+      text-align: center;
+      list-style:none;
+      font-size: 25px;
+    }
+
+  </style> 
+
+  <h1>Welcome to your home page, {% if 'user' in session %}{{ session['user'] }}{% else %}Guest{% endif %}!</h1>
+  <p>You matched with these users based on the games you play:
+    <ul>
+        {% for username, games in user_data.items() %}
+            <li>
+                <a href="{{ url_for('views.search_results_p', username=username) }}">
+                   <span style="color: #585EFF;"> - {{ username }} </span> 
+                    <span style="color: #fff;"> plays </span> 
+                    <span style="color: #8488F4">{{ ', '.join(games) }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</p>
+
+
+{% endblock %}

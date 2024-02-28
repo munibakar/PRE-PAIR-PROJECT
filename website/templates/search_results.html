@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Search Results
+{% endblock %}
+
+{% block content %}
+<style> /* Stil dosyası (style.css) */
+
+body {
+    background-image: url("https://i.hizliresim.com/6gc8bli.png");
+    background-size: cover;
+    background-position: center;
+    font-family: 'VT323', monospace;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    
+}
+
+button {
+    background-color: #585EFF;
+  }
+
+.search-results-container {
+    margin: 0 auto:
+    max-width: 500px;
+    width: 100%;
+    background-color: rgba(42, 42, 42, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Sayfanın üstünden biraz aşağıda başlasın */
+    backdrop-filter: blur(1px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color for contrast */
+}
+
+h1 {
+    color: #21EF80;
+    text-align: center;
+}
+
+.result-list {
+    list-style: none;
+    padding: 0;
+}
+
+.result-list li {
+    margin: 10px 0;
+}
+
+.result-list a {
+    text-decoration: none;
+    color: #585EFF;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.result-list a:hover {
+    color: #8488F4;
+}
+
+</style>
+    <div class="search-results-container text-center">
+        <h1>Search Results</h1>
+
+        {% if results %}
+            <ol class="result-list">
+                {% for result in results %}
+                    <li>
+                        <a href="{{ url_for('views.search_results_p', username=result.username) }}">
+                            {{ result.username }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+
+{% endblock content %}
+    
