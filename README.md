@@ -1,28 +1,29 @@
 # PRE-PAIR PROJECT
   Pre-Pair is a matchmaking platform designed to bring together people who enjoy playing games.
 
-Programming Language: Python
+PROGRAMMING LANGUAGE:  
 
-Web Framework: Flask
+Python
 
-Database: Firebase (Real-time, Cloud-based)
+WEB FRAMEWORK: 
+ 
+ Flask
 
-Frontend Technologies:
+DATABASE:
 
-HTML
+ Firebase (Real-time, Cloud-based)
 
-CSS
+FRONTED TECHNOLOGIES:
+
+ HTML,
+ CSS
 
 ALGORITHMS:
 
-User login
-User registration
-
-Password reset
-
-Game addition
-
-User Search
-
-User matching (Main project objective)
+ User login,
+ User registration,
+ Password reset
+ Game addition,
+ User Search,
+ User matching (Main project objective)
 
