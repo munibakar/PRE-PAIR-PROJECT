@@ -8,11 +8,12 @@ Web Framework: Flask
 Database: Firebase (Real-time, Cloud-based)
 
 Frontend Technologies:
+
 HTML
 
 CSS
 
-Algorithms:
+ALGORITHMS:
 
 User login
 
