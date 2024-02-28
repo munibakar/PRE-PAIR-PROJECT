@@ -16,7 +16,6 @@ CSS
 ALGORITHMS:
 
 User login
-
 User registration
 
 Password reset
