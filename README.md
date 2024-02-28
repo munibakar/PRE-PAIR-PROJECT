@@ -9,12 +9,20 @@ Database: Firebase (Real-time, Cloud-based)
 
 Frontend Technologies:
 HTML
+
 CSS
 
 Algorithms:
+
 User login
+
 User registration
+
 Password reset
+
 Game addition
+
 User Search
+
 User matching (Main project objective)
+
