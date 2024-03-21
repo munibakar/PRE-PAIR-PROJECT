@@ -4,9 +4,9 @@ from email.mime.multipart import MIMEMultipart
 import random
 
 def mail_to(email):
-    sender_email = "prepairteam@gmail.com"
+    sender_email = "mail here"
     receiver_email = email
-    password = "ntgx mexg qitd noef"
+    password = "Password here"
     sender_name = "Pre-Pair Team"
 
     verification_code = f"{random.randint(0, 999999):06d}"
