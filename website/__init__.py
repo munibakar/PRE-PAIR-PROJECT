@@ -9,7 +9,7 @@ db = firestore.client()
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = 'allahimbuprojeyineredenbasimizacikardinbitmiyorbu13212332156584.AAAAA'
+    app.secret_key = 'SECRET KEY HERE'
 
     from .views import views
     from .auth_bp import auth_bp
